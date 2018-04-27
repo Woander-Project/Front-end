@@ -1,17 +1,13 @@
-import React, {Component} from "react";
+import React from "react";
 import NavBar from "./Components/NavBar";
-import Path from "./Components/Path";
+import Main from "./Main";
 
-class App extends Component {
-	render() {
-		return (
-			<div className="App">
-				<NavBar/>
-				<Path/>
-			</div>
-		);
-	}
-}
+const App = () => (
+	<div className="App">
+		<NavBar/>
+		<Main/>
+	</div>
+);
 
 export default App;
 
