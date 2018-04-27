@@ -1,0 +1,25 @@
+.map {
+  height: 360px;
+  width: 41%;
+  max-width: 1140px;
+  box-shadow: 2px 2px 23px rgba(0, 0, 0, 0.3);
+  border: #F0F8FF 6px solid;
+  border-radius: 6px;
+  position: fixed;
+}
+
+/*
+  Small devices (landscape phones, 576px and down)
+ */
+@media (max-width: 576px) {
+}
+
+/*
+  Medium devices (tablets, 768px and down)
+*/
+@media (max-width: 768px) {
+  .map {
+    width: 84%;
+    position: absolute;
+  }
+}

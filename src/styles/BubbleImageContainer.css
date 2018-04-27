@@ -1,0 +1,8 @@
+.bubble-container {
+  background-color: #C2E7D5;
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  align-items: center;
+  height: 45vh;
+}
