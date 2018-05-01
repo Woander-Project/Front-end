@@ -3,6 +3,7 @@ import BubbleImageContainer from "./BubbleImageContainer";
 import Map from "./Map";
 import WoanderDescription from "./WoanderDescription";
 import WoanderTitle from "./WoanderTitle";
+import CommentPath from "./CommentPath";
 
 class Path extends Component {
 	render() {
@@ -18,6 +19,7 @@ class Path extends Component {
 					<div className="row h-75">
 						<div className="col-lg-6 col-md-6 col-sm-12 col-xs-12 h-100">
 							<Map/>
+							<CommentPath/>
 						</div>
 						<div className="col-lg-6 col-md-6 col-sm-12 col-xs-12 h-100">
 							<WoanderDescription/>
