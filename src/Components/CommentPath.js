@@ -2,7 +2,7 @@ import React from "react";
 
 const CommentPath = (props) => {
 	return (
-		<div>This is the comment section</div>
+		<div className="comments-container">This is the comment section</div>
 	);
 };
 

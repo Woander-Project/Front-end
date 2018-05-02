@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 
 const WoanderDescription = ({description}) => {
 	return (
-		<div className="container h-100">
+		<div className="container">
 			{description.map((val, index) => {
 				return (
 					<div key={index}>
