@@ -8,11 +8,12 @@
 @import "NavBar";
 @import "WoanderDescription";
 @import "WoanderTitle";
+@import "CommentPath";
 
 /*
   Global Styles
  */
-html, body, main, .App, #root {
+body, main, .App, #root {
   height: 100%;
 }
 
