@@ -1,11 +1,18 @@
+.map-container {
+  position: fixed;
+  width: 43%;
+  overflow: auto;
+}
+
 .map {
-  height: 360px;
-  width: 41%;
+  height: 30vh;
+  min-height: 150px;
+  width: 100%;
   max-width: 1140px;
   box-shadow: 2px 2px 23px rgba(0, 0, 0, 0.3);
   border: #F0F8FF 6px solid;
   border-radius: 6px;
-  position: fixed;
+  margin-top: 10px;
 }
 
 /*
@@ -19,7 +26,12 @@
 */
 @media (max-width: 768px) {
   .map {
-    width: 84%;
-    position: absolute;
+    width: 100%;
+  }
+
+  .map-container {
+    width: 100%;
+    position: initial;
+    margin-bottom: 10px;
   }
 }
