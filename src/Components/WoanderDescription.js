@@ -6,9 +6,11 @@ const WoanderDescription = ({description}) => {
 		<div className="container">
 			{description.map((val, index) => {
 				return (
-					<div key={index}>
-						<h2>{val.timelineTitle}</h2>
-						<p className="description">{val.timelineDescription}</p>
+					<div key={index} className="card card-container">
+						<div className="card-body">
+							<h5 className="card-title text-muted">{val.timelineTitle}</h5>
+							<p className="description card-text">{val.timelineDescription}</p>
+						</div>
 					</div>
 				);
 			})}
