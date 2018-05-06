@@ -1,7 +1,14 @@
+$map-container-height: auto;
+
 .map-container {
   position: fixed;
   width: 43%;
   overflow: auto;
+  height: 50%;
+}
+
+.map-container::-webkit-scrollbar {
+  display: none;
 }
 
 .map {
