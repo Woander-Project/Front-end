@@ -16,7 +16,7 @@ class Path extends Component {
 						</div>
 					</div>
 					<div className="row h-75">
-						<div className="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+						<div className="col-lg-6 col-md-6 col-sm-12 col-xs-12 h-50">
 							<Map/>
 						</div>
 						<div className="col-lg-6 col-md-6 col-sm-12 col-xs-12">

@@ -24,3 +24,9 @@ p {
 h2 {
   font-size: 1.8rem;
 }
+
+a,
+a:focus,
+a:active {
+  outline: none;
+}
