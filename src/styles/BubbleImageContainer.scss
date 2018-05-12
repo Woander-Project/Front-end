@@ -7,20 +7,36 @@
   height: 30vh;
   min-height: 260px;
   padding-top: 35px;
+  box-shadow: 2px 2px 23px rgba(194, 231, 213, 0.5);
+  transition: height ease-in-out 0.2s;
   &:hover {
-    height: 35vh;
+    height: 37vh;
+    .img-1,
+    .img-3 {
+      transform: translateY(20%);
+    }
+    .img-0,
+    .img-2,
+    .img-4 {
+      transform: translateY(-10%);
+    }
   }
 }
 
-.image-container {
-  z-index: 1;
-}
-
-.img {
+.img-0,
+.img-1,
+.img-2,
+.img-3,
+.img-4 {
   border-radius: 50%;
   padding: 15%;
-  max-height: 200px;
-  max-width: 200px;
+  max-height: 250px;
+  max-width: 250px;
   width: 17vw;
   height: 17vw;
+  transition: transform 0.2s ease-in-out;
+  &:hover {
+    //needs fixing because the translateY attribute gets overwritten by that
+    transform: scale(1.2, 1.2) !important;
+  }
 }

@@ -11,8 +11,8 @@ const BubbleImageContainer = ({images}) => {
 		<div className="bubble-container">
 			{images.map((image, index) => {
 				return (
-					<div key={index} className="image-container">
-						<img src={image} alt="hello" className="img"/>
+					<div key={index}>
+						<img src={image} alt="hello" className={`img-${index}`}/>
 					</div>
 				);
 			})}
