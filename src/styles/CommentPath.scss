@@ -3,4 +3,10 @@
   border-radius: 8px;
   margin-top: 10px;
   padding: 5px;
+  height: 30vh;
+  overflow: auto;
+}
+
+.comments-container::-webkit-scrollbar {
+  display: none;
 }
