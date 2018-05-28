@@ -13,7 +13,7 @@ class Map extends Component {
 
 	render() {
 		return (
-			<div className="map-container">
+			<div className="container">
 				<div className="map">
 					<GoogleMapReact
 						bootstrapURLKeys={{key: "AIzaSyBwG6pDtsck7u3pBwRHnv0lga1NOmQRz9Y"}}
@@ -35,7 +35,7 @@ Map.defaultProps = {
 		lat: 37.983810,
 		lng: 23.727539
 	},
-	zoom: 11
+	zoom: 15
 };
 
 export default Map;
