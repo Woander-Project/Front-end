@@ -9,11 +9,15 @@
 @import "WoanderDescription";
 @import "WoanderTitle";
 @import "CommentPath";
+@import "LoginForm";
 
 /*
   Global Styles
  */
-body, main, .App, #root {
+body,
+main,
+.App,
+#root {
   height: 100%;
 }
 
