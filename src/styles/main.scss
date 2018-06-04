@@ -1,6 +1,7 @@
 /*
   Imports
  */
+@import "variables";
 @import "App";
 @import "Map";
 @import "Path";
@@ -10,6 +11,7 @@
 @import "WoanderTitle";
 @import "CommentPath";
 @import "LoginForm";
+@import "buttons";
 
 /*
   Global Styles
@@ -33,4 +35,9 @@ a,
 a:focus,
 a:active {
   outline: none;
+}
+
+.text-small {
+  font-size: 13px;
+  text-align: center;
 }
