@@ -1,6 +1,35 @@
 import React, { Component } from "react";
 
 class LoginForm extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      email: "",
+      password: ""
+    };
+
+    this.handleInputchange = this.handleInputchange.bind(this);
+    this.handleLogin = this.handleLogin.bind(this);
+  }
+
+  handleInputchange(e) {
+    e.preventDefault();
+    this.setState({
+      [e.target.name]: e.target.value
+    });
+  }
+
+  handleLogin(e) {
+    e.preventDefault();
+    // TODO Make form submit to the backend
+    console.log(`Email: ${this.state.email}, Password: ${this.state.password}`);
+    this.setState({
+      email: "",
+      password: ""
+    });
+  }
+
   render() {
     return (
       <div className="background-form">
@@ -8,7 +37,7 @@ class LoginForm extends Component {
           <p className="logo" />
           <p className="text-center">Welcome Back</p>
           <p className="text-muted text-small">Choose Your Path</p>
-          <form>
+          <form onSubmit={this.handleLogin}>
             <div className="form-group">
               <label htmlFor="emailInput">Email:</label>
               <input
@@ -18,6 +47,8 @@ class LoginForm extends Component {
                 name="email"
                 autoComplete="off"
                 placeholder="Email"
+                value={this.state.email}
+                onChange={this.handleInputchange}
                 required
               />
             </div>
@@ -30,6 +61,8 @@ class LoginForm extends Component {
                 name="password"
                 autoComplete="off"
                 placeholder="Password"
+                value={this.state.password}
+                onChange={this.handleInputchange}
                 required
               />
             </div>
