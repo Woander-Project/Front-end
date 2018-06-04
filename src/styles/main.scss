@@ -1,6 +1,7 @@
 /*
   Imports
  */
+@import "variables";
 @import "App";
 @import "Map";
 @import "Path";
@@ -9,11 +10,16 @@
 @import "WoanderDescription";
 @import "WoanderTitle";
 @import "CommentPath";
+@import "LoginForm";
+@import "buttons";
 
 /*
   Global Styles
  */
-body, main, .App, #root {
+body,
+main,
+.App,
+#root {
   height: 100%;
 }
 
@@ -29,4 +35,9 @@ a,
 a:focus,
 a:active {
   outline: none;
+}
+
+.text-small {
+  font-size: 13px;
+  text-align: center;
 }

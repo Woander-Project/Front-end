@@ -1,0 +1,17 @@
+.btn-facebook {
+  background-color: $facebook-color;
+  color: white;
+  outline: none;
+  &:hover {
+    background-color: $facebook-color-hover;
+  }
+}
+
+.btn-google {
+  background-color: $google-plus-color;
+  color: white;
+  outline: none;
+  &:hover {
+    background-color: $google-plus-color-hover;
+  }
+}
