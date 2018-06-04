@@ -23,3 +23,15 @@
   background-color: $background-basic;
   border-radius: 50%;
 }
+
+/*
+  Mobiles
+*/
+
+@media screen and (max-width: 481px) {
+  .form-container {
+    top: 50px;
+    max-width: 100%;
+    height: 100%;
+  }
+}
