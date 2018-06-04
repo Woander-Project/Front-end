@@ -1,5 +1,5 @@
 .bubble-container {
-  background-color: #C2E7D5;
+  background-color: $background-basic;
   display: flex;
   justify-content: space-evenly;
   flex-direction: row;
@@ -41,6 +41,6 @@
   &:hover {
     box-shadow: 0 7px 15px 6px rgba(0, 0, 0, 0.2);
     //  TODO translateY attribute gets overwritten by that
-    transform: scale(1.2, 1.2)  !important;
+    transform: scale(1.2, 1.2) !important;
   }
 }
