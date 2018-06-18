@@ -1,41 +1,47 @@
-import React, {Component} from "react";
+import React, { Component } from "react";
 import GoogleMapReact from "google-map-react";
 import CommentPath from "./CommentPath";
 
 class Map extends Component {
-	renderMarkers(map, maps) {
-		let marker = new maps.Marker({
-			position: this.props.center,
-			map,
-			title: "Hello World!"
-		});
-	}
+  renderMarkers(map, maps) {
+    let marker = [];
+    this.props.coordinates.map(
+      (center, i) =>
+        (marker[i] = new maps.Marker({
+          position: center,
+          map,
+          title: "Hello World!"
+        }))
+    );
+  }
 
-	render() {
-		return (
-			<div className="container">
-				<div className="map">
-					<GoogleMapReact
-						bootstrapURLKeys={{key: "AIzaSyBwG6pDtsck7u3pBwRHnv0lga1NOmQRz9Y"}}
-						defaultCenter={this.props.center}
-						defaultZoom={this.props.zoom}
-						onGoogleApiLoaded={({map, maps}) => this.renderMarkers(map, maps)}
-						yesIWantToUseGoogleMapApiInternals
-					>
-					</GoogleMapReact>
-				</div>
-				<CommentPath/>
-			</div>
-		);
-	}
+  render() {
+    return (
+      <div className="container">
+        <div className="map">
+          <GoogleMapReact
+            defaultCenter={this.props.center}
+            defaultZoom={this.props.zoom}
+            onGoogleApiLoaded={({ map, maps }) => this.renderMarkers(map, maps)}
+            yesIWantToUseGoogleMapApiInternals
+          />
+        </div>
+        <CommentPath />
+      </div>
+    );
+  }
 }
 
 Map.defaultProps = {
-	center: {
-		lat: 37.983810,
-		lng: 23.727539
-	},
-	zoom: 15
+  center: {
+    lat: 37.98381,
+    lng: 23.727539
+  },
+  coordinates: [
+    { lat: 37.98381, lng: 23.727539 },
+    { lat: 37.97381, lng: 23.717539 }
+  ],
+  zoom: 14
 };
 
 export default Map;
