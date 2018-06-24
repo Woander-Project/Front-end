@@ -1,0 +1,13 @@
+.homepage-container {
+  background-color: $background-basic;
+  padding-top: 75px;
+  height: 100%;
+}
+
+
+// Ipad Pro
+@media screen and (width: 1024px) and (height: 1366px) {
+  .homepage-container {
+    height: 100vh;
+  }
+}
