@@ -3,11 +3,12 @@
   height: 100vh;
   background: #ffffff url("../assets/img-1.jpg") no-repeat center;
   background-size: cover;
+  overflow: auto;
 }
 
 .form-container {
   position: relative;
-  top: 20%;
+  top: 15%;
   max-width: 300px;
   background-color: white;
   padding: 15px;
