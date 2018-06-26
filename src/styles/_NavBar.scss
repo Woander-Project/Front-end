@@ -1,4 +1,21 @@
 .fa-search {
-  color: #7C93A0;
+  color: $panels-color-basic;
   margin-left: 5vw;
+}
+
+.search-bar {
+  background-color: transparent;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  outline: none;
+  margin-left: 15px;
+  color: $panels-color-basic;
+  opacity: 0.2;
+  border-bottom: 1px solid $panels-color-basic;
+  transition: opacity ease-in-out 0.2s;
+}
+
+.search-bar:focus {
+  opacity: 0.7;
 }
