@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import Card from "./Card";
+import FiltersPanel from "./FiltersPanel";
 import img1 from "../assets/img-1.jpg";
 import img2 from "../assets/img-2.jpg";
 import img3 from "../assets/img-3.jpg";
@@ -23,7 +24,8 @@ class Homepage extends Component {
     ));
     return (
       <div className="homepage-container">
-        <div className="card-columns container">{showCards}</div>
+        <FiltersPanel />
+        <div className="card-columns">{showCards}</div>
       </div>
     );
   }
