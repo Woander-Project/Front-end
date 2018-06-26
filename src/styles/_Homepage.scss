@@ -1,13 +1,19 @@
 .homepage-container {
+  position: absolute;
+  overflow: auto;
   background-color: $background-basic;
   padding-top: 75px;
   height: 100%;
+  width: 100%;
 }
 
+.card-columns {
+  margin: 0 6%;
+}
 
-// Ipad Pro
-@media screen and (width: 1024px) and (height: 1366px) {
-  .homepage-container {
-    height: 100vh;
+@media screen and (min-width: 992px) {
+  .card-columns {
+    width: 60%;
+    float: right;
   }
 }

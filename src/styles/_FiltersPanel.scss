@@ -1,0 +1,32 @@
+.filters-panel {
+  background-color: $panels-background-color-basic;
+  color: $panels-color-basic;
+  position: fixed;
+  float: left;
+  width: 255px;
+  margin-left: 4%;
+  border-radius: 0.25rem;
+  max-height: 80vh;
+  overflow: overlay;
+}
+
+.filters-panel::-webkit-scrollbar {
+  display: none;
+}
+
+.filters {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.filter-line {
+  background-color: $panels-color-basic;
+}
+
+.filters-panel {
+  .title {
+    padding: 10px 0 0;
+    margin: 0;
+  }
+}
