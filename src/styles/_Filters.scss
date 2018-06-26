@@ -1,0 +1,10 @@
+.filter {
+  padding: 3px;
+  border: 1px solid $panels-color-basic;
+  margin: 0.3em;
+  cursor: pointer;
+}
+
+.filter:hover {
+  border-color: white;
+}
