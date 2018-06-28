@@ -3,6 +3,12 @@
   width: 100%;
 }
 
-.card-container {
-  margin-top: 9px;
+.description-container {
+  margin-bottom: 10px;
+}
+
+@media screen and (max-width: 767px) {
+  .description-container {
+    margin-top: 15px;
+  }
 }
