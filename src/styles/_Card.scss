@@ -1,8 +1,8 @@
-.card {
+.card-container {
   transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
 }
 
-.card:hover {
+.card-container:hover {
   box-shadow: 0 4px 8px -2px rgba(0, 0, 0, 0.1);
   transform: translateY(-5px);
   cursor: pointer;
