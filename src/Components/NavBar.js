@@ -6,26 +6,58 @@ class NavBar extends Component {
     super(props);
 
     this.state = {
-      dropdownOn: false
+      dropdownOn: false,
+      width: undefined
     };
-
-    this.toggleMenu = this.toggleMenu.bind(this);
+    this.updateDimensions = this.updateDimensions.bind(this);
+    this.dropdownToggle = this.dropdownToggle.bind(this);
+    this.closeDropdown = this.closeDropdown.bind(this);
   }
 
-  toggleMenu() {
+  componentDidMount() {
+    this.updateDimensions();
+    window.addEventListener("resize", () => {
+      this.updateDimensions();
+      this.closeDropdown();
+    });
+    window.addEventListener("scroll", this.closeDropdown);
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener("resize", () => {
+      this.updateDimensions();
+      this.closeDropdown();
+    });
+  }
+
+  updateDimensions() {
+    this.setState({
+      width: window.innerWidth
+    });
+  }
+
+  dropdownToggle() {
     this.setState({
       dropdownOn: !this.state.dropdownOn
     });
-    console.log(window.innerWidth);
   }
+
+  closeDropdown() {
+    this.setState({
+      dropdownOn: false
+    });
+  }
+
   render() {
-    const { dropdownOn } = this.state;
+    const showDropdownStyle = { display: "block", left: "-100px" };
 
     let menu;
-    if (!dropdownOn) {
+    if (this.state.width > 992) {
       menu = (
-        <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
-          <i className="fas fa-search" />
+        <div className=" collapse navbar-collapse" id="navbarNavAltMarkup">
+          <span>
+            <i className="fas fa-search" />
+          </span>
           <input className="search-bar" autoComplete="off" />
           <ul className="navbar-nav ml-auto">
             <li>
@@ -48,25 +80,52 @@ class NavBar extends Component {
         </div>
       );
     } else {
-      menu = <div>Hello</div>;
+      menu = (
+        <div className="dropdown">
+          <button
+            className="navbar-toggler dropdown-toggle"
+            type="button"
+            id="dropdownMenuButton"
+            data-toggle="dropdown"
+            aria-haspopup="true"
+            aria-expanded="false"
+            onClick={this.dropdownToggle}
+          >
+            <span className="navbar-toggler-icon" />
+          </button>
+          <div
+            style={this.state.dropdownOn ? showDropdownStyle : null}
+            className="dropdown-menu"
+            aria-labelledby="dropdownMenuButton"
+          >
+            <Link to="/" className="nav-item nav-link dropdown-item">
+              Home
+            </Link>
+            <Link to="/about" className="nav-item nav-link dropdown-item">
+              About
+            </Link>
+            <Link to="/path" className="btn-dropdown nav-item btn btn-primary">
+              New Woander
+            </Link>
+          </div>
+        </div>
+      );
     }
     return (
       <nav className="navbar navbar-expand-lg fixed-top navbar-dark bg-dark">
         <Link to="/" className="navbar-brand">
           Woander
         </Link>
-        <button
-          className="navbar-toggler"
-          type="button"
-          data-toggle="collapse"
-          data-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-          onClick={this.toggleMenu}
-        >
-          <span className="navbar-toggler-icon" />
-        </button>
+        {/* <button
+            className="navbar-toggler dropdown-toggle"
+            type="button"
+            id="dropdownMenuButton"
+            data-toggle="dropdown"
+            aria-haspopup="true"
+            aria-expanded="false"
+          >
+            <span className="navbar-toggler-icon" />
+          </button> */}
         {menu}
       </nav>
     );

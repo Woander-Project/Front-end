@@ -16,6 +16,23 @@
   transition: opacity ease-in-out 0.2s;
 }
 
+.nav-link {
+  color: $panels-color-basic;
+}
+
 .search-bar:focus {
   opacity: 1;
+}
+
+.dropdown-menu {
+  background-color: $panels-background-color-basic;
+  color: $panels-color-basic;
+}
+
+.dropdown-toggle::after {
+  display: none;
+}
+
+.btn-dropdown {
+  width: 100%;
 }
