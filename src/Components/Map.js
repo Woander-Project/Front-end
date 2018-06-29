@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import GoogleMapReact from "google-map-react";
-import CommentPath from "./CommentPath";
 
 class Map extends Component {
   renderMarkers(map, maps) {
@@ -26,7 +25,6 @@ class Map extends Component {
             yesIWantToUseGoogleMapApiInternals
           />
         </div>
-        <CommentPath />
       </div>
     );
   }
