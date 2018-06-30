@@ -3,9 +3,43 @@ import BubbleImageContainer from "./BubbleImageContainer";
 import Map from "./Map";
 import WoanderDescription from "./WoanderDescription";
 import WoanderTitle from "./WoanderTitle";
+import CommentPath from "./CommentPath";
 
 class Path extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      toggleComments: false
+    };
+
+    this.showMap = this.showMap.bind(this);
+    this.showComments = this.showComments.bind(this);
+  }
+
+  showMap() {
+    if (this.state.toggleComments) {
+      this.setState({
+        toggleComments: false
+      });
+    }
+  }
+
+  showComments() {
+    if (!this.state.toggleComments) {
+      this.setState({
+        toggleComments: true
+      });
+    }
+  }
+
   render() {
+    let leftSection;
+    if (this.state.toggleComments) {
+      leftSection = <CommentPath />;
+    } else {
+      leftSection = <Map />;
+    }
     return (
       <div className="Path">
         <BubbleImageContainer />
@@ -15,9 +49,27 @@ class Path extends Component {
               <WoanderTitle />
             </div>
           </div>
-          <div className="row h-75">
+          <div className="row">
             <div className="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-              <Map />
+              <div className="container">{leftSection}</div>
+              <div className="container toggle-buttons">
+                <button
+                  className={`btn ${
+                    !this.state.toggleComments ? "btn-toggle" : null
+                  }`}
+                  onClick={this.showMap}
+                >
+                  Map
+                </button>
+                <button
+                  className={`btn ${
+                    this.state.toggleComments ? "btn-toggle" : null
+                  }`}
+                  onClick={this.showComments}
+                >
+                  Comments
+                </button>
+              </div>
             </div>
             <div className="col-lg-6 col-md-6 col-sm-12 col-xs-12">
               <WoanderDescription />
