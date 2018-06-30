@@ -41,6 +41,10 @@ a:active {
   outline: none;
 }
 
+.btn:focus {
+  box-shadow: none;
+}
+
 .text-small {
   font-size: 13px;
   text-align: center;

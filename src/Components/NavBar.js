@@ -112,7 +112,7 @@ class NavBar extends Component {
       );
     }
     return (
-      <nav className="navbar navbar-expand-lg fixed-top navbar-dark bg-dark">
+      <nav className="navbar navbar-expand-lg fixed-top navbar-dark">
         <Link to="/" className="navbar-brand">
           Woander
         </Link>
