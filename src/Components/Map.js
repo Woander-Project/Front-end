@@ -16,15 +16,13 @@ class Map extends Component {
 
   render() {
     return (
-      <div className="container">
-        <div className="map">
-          <GoogleMapReact
-            defaultCenter={this.props.center}
-            defaultZoom={this.props.zoom}
-            onGoogleApiLoaded={({ map, maps }) => this.renderMarkers(map, maps)}
-            yesIWantToUseGoogleMapApiInternals
-          />
-        </div>
+      <div className="map">
+        <GoogleMapReact
+          defaultCenter={this.props.center}
+          defaultZoom={this.props.zoom}
+          onGoogleApiLoaded={({ map, maps }) => this.renderMarkers(map, maps)}
+          yesIWantToUseGoogleMapApiInternals
+        />
       </div>
     );
   }

@@ -13,13 +13,24 @@ class Path extends Component {
       toggleComments: false
     };
 
-    this.toggleBoxes = this.toggleBoxes.bind(this);
+    this.showMap = this.showMap.bind(this);
+    this.showComments = this.showComments.bind(this);
   }
 
-  toggleBoxes() {
-    this.setState({
-      toggleComments: !this.state.toggleComments
-    });
+  showMap() {
+    if (this.state.toggleComments) {
+      this.setState({
+        toggleComments: false
+      });
+    }
+  }
+
+  showComments() {
+    if (!this.state.toggleComments) {
+      this.setState({
+        toggleComments: true
+      });
+    }
   }
 
   render() {
@@ -40,10 +51,25 @@ class Path extends Component {
           </div>
           <div className="row">
             <div className="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-              <button className="btn" onClick={this.toggleBoxes}>
-                Go To: {this.state.toggleComments ? "Map" : "Comments"}
-              </button>
-              {leftSection}
+              <div className="container">{leftSection}</div>
+              <div className="container toggle-buttons">
+                <button
+                  className={`btn ${
+                    !this.state.toggleComments ? "btn-toggle" : null
+                  }`}
+                  onClick={this.showMap}
+                >
+                  Map
+                </button>
+                <button
+                  className={`btn ${
+                    this.state.toggleComments ? "btn-toggle" : null
+                  }`}
+                  onClick={this.showComments}
+                >
+                  Comments
+                </button>
+              </div>
             </div>
             <div className="col-lg-6 col-md-6 col-sm-12 col-xs-12">
               <WoanderDescription />
