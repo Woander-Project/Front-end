@@ -66,7 +66,7 @@ class LoginForm extends Component {
                 required
               />
             </div>
-            <button type="submit" className="btn btn-secondary btn-block">
+            <button type="submit" className="btn btn-toggle btn-block">
               Continue
             </button>
             <br />

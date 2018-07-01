@@ -25,7 +25,6 @@ class NavBar extends Component {
 
   componentWillUnmount() {
     window.removeEventListener("resize", () => {
-      this.updateDimensions();
       this.closeDropdown();
     });
   }
@@ -72,8 +71,8 @@ class NavBar extends Component {
             </li>
             <li>
               {/* Currently this is the /path but ti will be /newwoander or Login */}
-              <Link to="/path" className="nav-item btn btn-primary">
-                New Woander
+              <Link to="/login" className="nav-item btn btn-primary">
+                Login
               </Link>
             </li>
           </ul>
@@ -98,14 +97,26 @@ class NavBar extends Component {
             className="dropdown-menu"
             aria-labelledby="dropdownMenuButton"
           >
-            <Link to="/" className="nav-item nav-link dropdown-item">
+            <Link
+              to="/"
+              className="nav-item nav-link dropdown-item"
+              onClick={this.closeDropdown}
+            >
               Home
             </Link>
-            <Link to="/about" className="nav-item nav-link dropdown-item">
+            <Link
+              to="/about"
+              className="nav-item nav-link dropdown-item"
+              onClick={this.closeDropdown}
+            >
               About
             </Link>
-            <Link to="/path" className="btn-dropdown nav-item btn btn-primary">
-              New Woander
+            <Link
+              to="/login"
+              className="btn-dropdown nav-item btn btn-primary"
+              onClick={this.closeDropdown}
+            >
+              Login
             </Link>
           </div>
         </div>
