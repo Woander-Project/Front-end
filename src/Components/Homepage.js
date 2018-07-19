@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 import Card from "./Card";
 import FiltersPanel from "./FiltersPanel";
 import img1 from "../assets/img-1.jpg";
@@ -14,13 +15,14 @@ class Homepage extends Component {
 
   render() {
     const showCards = this.props.cards.map((card, i) => (
-      <Card
-        key={i}
-        image={card.image}
-        title={card.title}
-        description={card.description}
-        imageTitle={card.imageTitle}
-      />
+      <Link to="/path" key={i}>
+        <Card
+          image={card.image}
+          title={card.title}
+          description={card.description}
+          imageTitle={card.imageTitle}
+        />
+      </Link>
     ));
     return (
       <div className="homepage-container">
@@ -33,6 +35,60 @@ class Homepage extends Component {
 // Temporary data
 Homepage.defaultProps = {
   cards: [
+    {
+      title: "Hello",
+      image: img1,
+      description: "Blah Blah Blah Blah Blah Blah Blah Blah Blah",
+      imageTitle: "Image"
+    },
+    {
+      title: "Hey",
+      image: img2,
+      description: "Blah Blah Blah Blah Blah Blah Blah Blah Blah",
+      imageTitle: "Image"
+    },
+    {
+      title: "Yo",
+      image: img3,
+      description: "Blah Blah Blah Blah Blah Blah Blah Blah Blah",
+      imageTitle: "Image"
+    },
+    {
+      title: "Yo",
+      image: img3,
+      description: "Blah Blah Blah Blah Blah Blah Blah Blah Blah",
+      imageTitle: "Image"
+    },
+    {
+      title: "Hello",
+      image: img1,
+      description: "Blah Blah Blah Blah Blah Blah Blah Blah Blah",
+      imageTitle: "Image"
+    },
+    {
+      title: "Hey",
+      image: img2,
+      description: "Blah Blah Blah Blah Blah Blah Blah Blah Blah",
+      imageTitle: "Image"
+    },
+    {
+      title: "Yo",
+      image: img3,
+      description: "Blah Blah Blah Blah Blah Blah Blah Blah Blah",
+      imageTitle: "Image"
+    },
+    {
+      title: "Yo",
+      image: img3,
+      description: "Blah Blah Blah Blah Blah Blah Blah Blah Blah",
+      imageTitle: "Image"
+    },
+    {
+      title: "Sup",
+      image: img4,
+      description: "Blah Blah Blah Blah Blah Blah Blah Blah Blah",
+      imageTitle: "Image"
+    },
     {
       title: "Hello",
       image: img1,
