@@ -1,10 +1,17 @@
 .homepage-container {
   position: absolute;
-  overflow: auto;
   background-color: $background-basic;
   padding-top: 75px;
-  height: 100%;
   width: 100%;
+}
+
+a {
+  .card {
+    h5,
+    p {
+      color: #212529;
+    }
+  }
 }
 
 .card-columns {
