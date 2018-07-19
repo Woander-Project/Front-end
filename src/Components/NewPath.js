@@ -16,7 +16,7 @@ class NewPath extends Component {
   handleInputChange(e) {
     e.preventDefault();
     this.setState({
-      [e.target.id]: e.target.value
+      [e.target.name]: e.target.value
     });
   }
 
@@ -26,7 +26,7 @@ class NewPath extends Component {
         <div className="container">
           <div className="row">
             <div className="col-md-6 col-sm-12">
-              <Map getCoords={true} />
+              <Map canGetCoords />
             </div>
             <div className="col-md-6 col-sm-12">
               <form>
@@ -34,6 +34,7 @@ class NewPath extends Component {
                   <label htmlFor="pathName">Path Name:</label>
                   <input
                     type="text"
+                    name="pathName"
                     id="pathName"
                     className="form-control"
                     autoComplete="off"
@@ -44,6 +45,7 @@ class NewPath extends Component {
                 <div className="form-group">
                   <label htmlFor="shortDescription">Short Description:</label>
                   <textarea
+                    name="shortDescription"
                     className="form-control"
                     id="shortDescription"
                     onChange={this.handleInputChange}

@@ -15,11 +15,6 @@ class Map extends Component {
     );
   }
 
-  getNewPoint(e) {
-    console.log(e.lat);
-    console.log(e.lng);
-  }
-
   render() {
     return (
       <div className="map">
@@ -27,7 +22,7 @@ class Map extends Component {
           defaultCenter={this.props.center}
           defaultZoom={this.props.zoom}
           onGoogleApiLoaded={({ map, maps }) => this.renderMarkers(map, maps)}
-          onClick={this.props.getCoords ? e => this.getNewPoint(e) : null}
+          onClick={this.props.canGetCoords ? this.props.getCoordinates : null}
           yesIWantToUseGoogleMapApiInternals
         />
       </div>
@@ -36,7 +31,7 @@ class Map extends Component {
 }
 
 Map.defaultProps = {
-  getCoords: false,
+  canGetCoords: false,
   center: {
     lat: 37.98381,
     lng: 23.727539
@@ -49,7 +44,7 @@ Map.defaultProps = {
 };
 
 Map.propTypes = {
-  getCoords: PropTypes.bool.isRequired
+  canGetCoords: PropTypes.bool.isRequired
 };
 
 export default Map;
