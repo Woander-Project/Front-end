@@ -3,9 +3,29 @@ import PropTypes from "prop-types";
 import GoogleMapReact from "google-map-react";
 
 class Map extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      coordinates: this.props.coordinates
+    };
+  }
+
+  shouldComponentUpdate(nextProps, nextState) {
+    if (nextProps.coordinates !== this.props.coordinates) {
+      this.setState({
+        coordinates: nextProps.coordinates
+      });
+    debugger
+    }
+    return true;
+
+  }
+
   renderMarkers(map, maps) {
+    debugger
     let marker = [];
-    this.props.coordinates.map(
+    this.state.coordinates.map(
       (point, i) =>
         (marker[i] = new maps.Marker({
           position: point,

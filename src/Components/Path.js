@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import BubbleImageContainer from "./BubbleImageContainer";
-import Map from "./Map";
+import MapContainer from "./MapContainer";
 import WoanderDescription from "./WoanderDescription";
 import WoanderTitle from "./WoanderTitle";
 import CommentPath from "./CommentPath";
@@ -38,7 +38,7 @@ class Path extends Component {
     if (this.state.toggleComments) {
       leftSection = <CommentPath />;
     } else {
-      leftSection = <Map />;
+      leftSection = <MapContainer />;
     }
     return (
       <div className="Path">
@@ -59,7 +59,7 @@ class Path extends Component {
                   }`}
                   onClick={this.showMap}
                 >
-                  Map
+                  MapContainer
                 </button>
                 <button
                   className={`btn ${
