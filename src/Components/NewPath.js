@@ -1,5 +1,7 @@
 import React, { Component } from "react";
-import Map from "./Map";
+import { connect } from "react-redux";
+import { addPoint, removePoint } from "../ActionCreators/mapActionCreators";
+import MapContainer from "./MapContainer";
 
 class NewPath extends Component {
   constructor(props) {
@@ -20,13 +22,24 @@ class NewPath extends Component {
     });
   }
 
+  getPointCoordinates(e) {
+    this.props.addPoint({
+      lat: Number(e.latLng.lat()),
+      lng: Number(e.latLng.lng())
+    });
+  }
+
   render() {
     return (
       <div className="new-path-container">
         <div className="container">
           <div className="row">
             <div className="col-md-6 col-sm-12">
-              <Map canGetCoords />
+              <MapContainer
+                canGetCoords
+                coordinates={this.props.points}
+                getCoordinates={this.getPointCoordinates.bind(this)}
+              />
             </div>
             <div className="col-md-6 col-sm-12">
               <form>
@@ -60,4 +73,13 @@ class NewPath extends Component {
   }
 }
 
-export default NewPath;
+function mapStateToProps(reduxState) {
+  return {
+    points: reduxState.points
+  };
+}
+
+export default connect(
+  mapStateToProps,
+  { addPoint, removePoint }
+)(NewPath);
