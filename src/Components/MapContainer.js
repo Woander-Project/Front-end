@@ -1,56 +1,26 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
-import GoogleMapReact from "google-map-react";
+import MapComponent from "./MapComponent";
 
-class Map extends Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      coordinates: this.props.coordinates
-    };
-  }
-
-  shouldComponentUpdate(nextProps, nextState) {
-    if (nextProps.coordinates !== this.props.coordinates) {
-      this.setState({
-        coordinates: nextProps.coordinates
-      });
-    debugger
-    }
-    return true;
-
-  }
-
-  renderMarkers(map, maps) {
-    debugger
-    let marker = [];
-    this.state.coordinates.map(
-      (point, i) =>
-        (marker[i] = new maps.Marker({
-          position: point,
-          map,
-          title: "Hello World!"
-        }))
-    );
-  }
-
+class MapContainer extends Component {
   render() {
     return (
       <div className="map">
-        <GoogleMapReact
-          defaultCenter={this.props.center}
-          defaultZoom={this.props.zoom}
-          onGoogleApiLoaded={({ map, maps }) => this.renderMarkers(map, maps)}
-          onClick={this.props.canGetCoords ? this.props.getCoordinates : null}
-          yesIWantToUseGoogleMapApiInternals
+        <MapComponent
+          loadingElement={<div style={{ height: `100%` }} />}
+          containerElement={<div style={{ height: `100%` }} />}
+          mapElement={<div style={{ height: `100%` }} />}
+          markers={this.props.coordinates}
+          getCoordsOnClick={
+            this.props.canGetCoords ? this.props.getCoordinates : null
+          }
         />
       </div>
     );
   }
 }
 
-Map.defaultProps = {
+MapContainer.defaultProps = {
   canGetCoords: false,
   center: {
     lat: 37.98381,
@@ -63,8 +33,8 @@ Map.defaultProps = {
   zoom: 14
 };
 
-Map.propTypes = {
+MapContainer.propTypes = {
   canGetCoords: PropTypes.bool.isRequired
 };
 
-export default Map;
+export default MapContainer;

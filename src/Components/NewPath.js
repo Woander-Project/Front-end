@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
+import { addPoint, removePoint } from "../ActionCreators/mapActionCreators";
 import MapContainer from "./MapContainer";
 
 class NewPath extends Component {
@@ -22,9 +23,9 @@ class NewPath extends Component {
   }
 
   getPointCoordinates(e) {
-    this.props.dispatch({
-      type: "ADD_POINT",
-      point: { lat: e.lat, lng: e.lng }
+    this.props.addPoint({
+      lat: Number(e.latLng.lat()),
+      lng: Number(e.latLng.lng())
     });
   }
 
@@ -78,4 +79,7 @@ function mapStateToProps(reduxState) {
   };
 }
 
-export default connect(mapStateToProps)(NewPath);
+export default connect(
+  mapStateToProps,
+  { addPoint, removePoint }
+)(NewPath);
