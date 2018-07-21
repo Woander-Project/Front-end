@@ -1,0 +1,18 @@
+.inline-fields {
+  display: flex;
+  flex-direction: column;
+}
+
+.point-desc {
+  height: 100%;
+}
+
+.point-desc-container {
+  padding-bottom: 48px;
+  margin: 0;
+}
+
+.iploaded-img {
+  width: inherit;
+  border-radius: 0.25rem;
+}

@@ -31,6 +31,9 @@ class NewPath extends Component {
   }
 
   render() {
+    let showMarkerInputs = this.props.points.map(marker => (
+      <MarkerInput key={marker.id} point={marker.point} />
+    ));
     return (
       <div className="new-path-container">
         <div className="container">
@@ -68,10 +71,8 @@ class NewPath extends Component {
               </form>
             </div>
           </div>
-          <div className="row">
-            <div className="col-md-6 col-sm-12 marker-input-container">
-              <MarkerInput />
-            </div>
+          <div className="row marker-input-container">
+            <div className="col-md-12">{showMarkerInputs}</div>
           </div>
         </div>
       </div>
