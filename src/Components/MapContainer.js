@@ -27,8 +27,8 @@ MapContainer.defaultProps = {
     lng: 23.727539
   },
   coordinates: [
-    { lat: 37.98381, lng: 23.727539 },
-    { lat: 37.97381, lng: 23.717539 }
+    { point: { lat: 37.98381, lng: 23.727539 }, id: 1445 },
+    { point: { lat: 37.97381, lng: 23.717539 }, id: 4578 }
   ],
   zoom: 14
 };
