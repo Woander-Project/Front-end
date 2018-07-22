@@ -16,3 +16,15 @@
   width: inherit;
   border-radius: 0.25rem;
 }
+
+@media screen and (max-width: 991px) {
+  .marker-form-container {
+    margin-bottom: 25px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .inline-fields {
+    margin-bottom: 16px;
+  }
+}

@@ -2,7 +2,8 @@ import React from "react";
 import img from "../assets/img-1.jpg";
 
 const MarkerInput = props => (
-  <form className="container">
+  <form className="container marker-form-container">
+    <hr />
     <div className="row">
       <div className="col-md-4 inline-fields">
         <div className="form-group">
@@ -13,7 +14,7 @@ const MarkerInput = props => (
             type="text"
             autoComplete="off"
             name="pointTitle"
-            placeholder="Monastiraki"
+            placeholder="e.g Monastiraki"
           />
         </div>
         <div className="form-group">
@@ -40,6 +41,7 @@ const MarkerInput = props => (
             readOnly
           />
         </div>
+        <button className="btn btn-danger">Discard Point</button>
       </div>
       <div className="col-md-4 form-group point-desc-container">
         <label htmlFor="pointDescription">Point Description:</label>
