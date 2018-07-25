@@ -30,9 +30,18 @@ class NewPath extends Component {
     });
   }
 
+  deletePoint(e, id) {
+    e.preventDefault();
+    this.props.removePoint(id);
+  }
+
   render() {
     let showMarkerInputs = this.props.points.map(marker => (
-      <MarkerInput key={marker.id} point={marker.point} />
+      <MarkerInput
+        key={marker.id}
+        point={marker.point}
+        discardPoint={e => this.deletePoint(e, marker.id)}
+      />
     ));
     return (
       <div className="new-path-container">

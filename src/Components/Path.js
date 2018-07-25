@@ -59,7 +59,7 @@ class Path extends Component {
                   }`}
                   onClick={this.showMap}
                 >
-                  MapContainer
+                  Map
                 </button>
                 <button
                   className={`btn ${
