@@ -41,7 +41,9 @@ const MarkerInput = props => (
             readOnly
           />
         </div>
-        <button className="btn btn-danger">Discard Point</button>
+        <button className="btn btn-danger" onClick={props.discardPoint}>
+          Discard Point
+        </button>
       </div>
       <div className="col-md-4 form-group point-desc-container">
         <label htmlFor="pointDescription">Point Description:</label>
