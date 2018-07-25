@@ -10,6 +10,7 @@ class MapContainer extends Component {
           loadingElement={<div style={{ height: `100%` }} />}
           containerElement={<div style={{ height: `100%` }} />}
           mapElement={<div style={{ height: `100%` }} />}
+          mapZoom={this.props.zoom}
           markers={this.props.coordinates}
           getCoordsOnClick={
             this.props.canGetCoords ? this.props.getCoordinates : null
